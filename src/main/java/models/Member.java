@@ -24,4 +24,7 @@ public class Member {
         return this.lastName;
     }
 
+    public String getEmail() {
+        return "";
+    }
 }

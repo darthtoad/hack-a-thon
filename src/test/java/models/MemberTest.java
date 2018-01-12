@@ -24,10 +24,18 @@ public class MemberTest {
     }
 
     @Test
-    public void getLastName_getsFirstName_String() throws Exception {
+    public void getLastName_getsLastName_String() throws Exception {
         ArrayList skills = new ArrayList();
         skills.add("Java");
         Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
         assertEquals("the Enchanter", testMember.getLastName());
+    }
+
+    @Test
+    public void getEmail_getsEmail_String() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        assertEquals("thing@thing.com", testMember.getEmail());
     }
 }
