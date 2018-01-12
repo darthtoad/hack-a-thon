@@ -1,0 +1,11 @@
+{{#partial title}}
+    "2018 John Zerzan Hack-A-Thon: Teams"
+{{/partial}}
+{{#partial content}}
+    {{if teams}}
+        {{#each teams}}
+            <h5>{{name}}:</h5>
+            <p>{{description}}</p>
+
+        {{/each}}
+{{/partial}}
