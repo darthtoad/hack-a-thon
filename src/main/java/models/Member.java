@@ -21,7 +21,7 @@ public class Member {
     }
 
     public String getLastName() {
-        return "";
+        return this.lastName;
     }
 
 }
