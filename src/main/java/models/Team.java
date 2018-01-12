@@ -33,7 +33,7 @@ public class Team {
     }
 
     public static ArrayList<Team> getAllTeams() {
-        return new ArrayList<Team>();
+        return instances;
     }
 
     public static void clearAllTeams() {
