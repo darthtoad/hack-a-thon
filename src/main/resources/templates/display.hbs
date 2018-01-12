@@ -6,23 +6,22 @@
         {{#each teams}}
             <h5>{{name}}:</h5>
             <p>{{description}}</p>
-            {{#if members}}
-                {{#each members}}
-                    <p>First Name: {{firstName}}</p>
-                    <p>Last Name: {{lastName}}</p>
-                    <p>Email: {{email}}</p>
-                    <p>Favorite color: {{favoriteColor}}</p>
-                    {{#if skills}}
-                        {{#each skills}}
-                            <p>{{skill}}</p>
-                        {{/each}}
-                    {{/if}}
-                {{/each}}
-            {{/if}}
+            {{#each members}}
+                <p>First Name: {{firstName}}</p>
+                <p>Last Name: {{lastName}}</p>
+                <p>Email: {{email}}</p>
+                <p>Favorite color: {{favoriteColor}}</p>
+                {{#if skills}}
+                    {{#each skills}}
+                        <p>{{skill}}</p>
+                    {{/each}}
+                {{/if}}
+            {{/each}}
         {{/each}}
     {{else}}
     <p>No teams available</p>
     {{/if}}
+    <a href="/">Go back</a>
 {{/partial}}
 
 {{> layout.hbs}}

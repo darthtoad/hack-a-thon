@@ -2,9 +2,24 @@
     Add members!
 {{/partial}}
 {{#partial "content"}}
-    {{teamName}}
-    {{description}}
-    <br>
+    {{#if allMembers}}
+        <h1>{{currentTeam.name}}</h1><br>
+        <h4>{{currentTeam.description}}</h4><br>
+        {{#each allMembers}}
+            <div style="background-color: {{favoriteColor}}">
+                <h5>Name:</h5>
+                <p>{{firstName}} {{lastName}}</p>
+                <h5>Email</h5>
+                <p>{{email}}</p>
+                <h5>Skills</h5>
+                <p>{{skills}}</p>
+            </div>
+            <br>
+        {{/each}}
+    {{else}}
+        <h1>{{newTeam.name}}</h1><br>
+        <h4>{{newTeam.description}}</h4><br>
+    {{/if}}
     <h2>Add member</h2>
     <form action='/teams/new/members/next' method="post">
         <div class="form-group">
@@ -13,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="last-name">Last name</label>
-            <input id="last-name" name="last" class="form-control" type="text">
+            <input id="last-name" name="last-name" class="form-control" type="text">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
@@ -21,12 +36,19 @@
         </div>
         <div class="form-group">
             <label for="favorite-color">Favorite Color</label>
-            <input id="favorite-color" name="favorite-color" class="form-control" type="text">
+            <input id="favorite-color" name="favorite-color" class="form-control" type="color">
         </div>
         <div class="form-group">
             <label for="skills">Skills (Please separate by spaces. No commas)</label>
             <input id="skills" name="skills" class="form-control" type="text">
         </div>
-        <button type="submit" class="btn">Go!</button>
+        <button type="submit" class="btn">Add Member!</button>
     </form>
+    {{#if allMembers}}
+        <form action="/teams/display/finish" method="get">
+            <button type="submit" class="btn">Finish Team</button>
+        </form>
+    {{/if}}
 {{/partial}}
+
+{{> layout.hbs}}
