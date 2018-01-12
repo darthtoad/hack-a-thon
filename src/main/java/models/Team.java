@@ -29,7 +29,7 @@ public class Team {
     }
 
     public int getTeamId() {
-        return -1;
+        return this.teamId;
     }
 
     public void setName(String name) {

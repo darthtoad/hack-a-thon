@@ -102,6 +102,6 @@ public class TeamTest {
         ArrayList<Member> members = new ArrayList<>();
         members.add(testMember);
         Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
-        assertEquals(0, testTeam.getTeamId());
+        assertEquals(1, testTeam.getTeamId());
     }
 }
