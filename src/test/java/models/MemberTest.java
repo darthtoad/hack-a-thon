@@ -105,7 +105,7 @@ public class MemberTest {
     public void getMemberId_getsMemberId_int() throws Exception {
         Member m1 = setupNewMember();
         Member m2 = setupNewMember2();
-        assertEquals(2, m1.getMemberId());
+        assertEquals(1, m1.getMemberId());
     }
 
     public Member setupNewMember(){
