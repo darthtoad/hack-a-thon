@@ -62,4 +62,13 @@ public class MemberTest {
         testMember.setFirstName("John");
         assertEquals("John", testMember.getFirstName());
     }
+
+    @Test
+    public void setLastName_setsLastName_String() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        testMember.setLastName("John");
+        assertEquals("John", testMember.getLastName());
+    }
 }
