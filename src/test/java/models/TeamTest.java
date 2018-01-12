@@ -93,4 +93,15 @@ public class TeamTest {
         testTeam.setMembers(newMembers);
         assertEquals(newMembers, testTeam.getMembers());
     }
+
+    @Test
+    public void getTeamId_getsTeamId_Int() {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        ArrayList<Member> members = new ArrayList<>();
+        members.add(testMember);
+        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
+        assertEquals(0, testTeam.getTeamId());
+    }
 }
