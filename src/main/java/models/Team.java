@@ -17,6 +17,6 @@ public class Team {
     }
 
     public String getDescription() {
-        return "";
+        return this.description;
     }
 }
