@@ -1,5 +1,7 @@
 package models;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,6 +9,15 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class MemberTest {
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        Member.clearAllMembers();
+    }
+
     @Test
     public void memberInstantiatesCorrectly() throws Exception {
         ArrayList skills = new ArrayList();

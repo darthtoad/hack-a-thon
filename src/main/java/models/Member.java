@@ -9,7 +9,7 @@ public class Member {
     private String favoriteColor;
     private ArrayList<String> skills;
     private int memberId;
-    private ArrayList<Member> memberInstances = new ArrayList<Member>();
+    private static ArrayList<Member> memberInstances = new ArrayList<Member>();
     public Member(String firstName, String lastName, String email, String favoriteColor, ArrayList<String> skills) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,6 +42,10 @@ public class Member {
 
     public int getMemberId() {
         return this.memberId;
+    }
+
+    public static void clearAllMembers() {
+         memberInstances.clear();
     }
 
     public void setFirstName(String firstName) {
