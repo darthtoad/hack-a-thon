@@ -124,6 +124,14 @@ public class TeamTest {
         assertEquals(2, Team.getAllTeams().size());
     }
 
+    @Test
+    public void getAllTeams_AllTeamsContainAllTeams_true() {
+        setupNewTeam();
+        setupNewTeam2();
+        assertTrue(Team.getAllTeams().contains(setupNewTeam()));
+        assertTrue(Team.getAllTeams().contains(setupNewTeam2()));
+    }
+
     public Member setupNewMember(){
         ArrayList newSkills = new ArrayList();
         newSkills.add("Throwing");
