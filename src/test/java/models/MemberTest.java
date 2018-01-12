@@ -126,12 +126,19 @@ public class MemberTest {
         assertEquals(2, m2.getMemberId());
     }
 
-
     @Test
     public void getAllMembers_AllMembersAreCorrectlyReturned_ArrayList() {
         setupNewMember();
         setupNewMember2();
         assertEquals(2, Member.getAllMembers().size());
+    }
+
+    @Test
+    public void getAllMembers_AllMembersContainAllMembers_true() {
+        setupNewMember();
+        setupNewMember2();
+        assertTrue(Member.getAllMembers().contains(setupNewMember()));
+        assertTrue(Member.getAllMembers().contains(setupNewMember2()));
     }
 
     public Member setupNewMember(){
