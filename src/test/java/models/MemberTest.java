@@ -100,4 +100,24 @@ public class MemberTest {
         testMember.setSkills(differentSkills);
         assertEquals(differentSkills, testMember.getSkills());
     }
+
+    @Test
+    public void getMemberId_getsMemberId_int() throws Exception {
+        Member m1 = setupNewMember();
+        Member m2 = setupNewMember2();
+        assertEquals(2, m1.getMemberId());
+    }
+
+    public Member setupNewMember(){
+        ArrayList newSkills = new ArrayList();
+        newSkills.add("Throwing");
+        newSkills.add("Driving");
+        return new Member("Mr.", "T", "IPity@theFool.com", "Gold (chains)", newSkills);
+    }
+
+    public Member setupNewMember2() {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        return new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+    }
 }

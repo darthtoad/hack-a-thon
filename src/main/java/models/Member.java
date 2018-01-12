@@ -8,12 +8,16 @@ public class Member {
     private String email;
     private String favoriteColor;
     private ArrayList<String> skills;
+    private int memberId;
+    private ArrayList<Member> memberInstances = new ArrayList<Member>();
     public Member(String firstName, String lastName, String email, String favoriteColor, ArrayList<String> skills) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.favoriteColor = favoriteColor;
         this.skills = skills;
+        memberInstances.add(this);
+        this.memberId = memberInstances.size();
     }
 
     public String getFirstName() {
@@ -34,6 +38,10 @@ public class Member {
 
     public ArrayList<String> getSkills() {
         return this.skills;
+    }
+
+    public int getMemberId() {
+        return this.memberId;
     }
 
     public void setFirstName(String firstName) {

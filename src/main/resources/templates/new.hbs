@@ -1,0 +1,17 @@
+{{#partial "title"}}
+    Create a new team
+{{/partial}}
+{{#partial "content"}}
+    <h1>Edit address</h1>
+    <form action='/teams/new/members' method="post">
+        <div class="form-group">
+            <label for="team-name">Team name</label>
+            <input id="team-name" name="team-name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="description">Team description</label>
+            <input id="description" name="description" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Add members!</button>
+    </form>
+{{/partial}}

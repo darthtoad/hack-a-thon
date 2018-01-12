@@ -1,0 +1,32 @@
+{{#partial "title"}}
+    Add members!
+{{/partial}}
+{{#partial "content"}}
+    {{teamName}}
+    {{description}}
+    <br>
+    <h2>Add member</h2>
+    <form action='/teams/new/members/next' method="post">
+        <div class="form-group">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first-name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="favorite-color">Favorite Color</label>
+            <input id="favorite-color" name="favorite-color" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="skills">Skills (Please separate by spaces. No commas)</label>
+            <input id="skills" name="skills" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Go!</button>
+    </form>
+{{/partial}}
