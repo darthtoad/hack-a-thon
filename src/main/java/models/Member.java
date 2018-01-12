@@ -49,6 +49,6 @@ public class Member {
     }
 
     public void setFavoriteColor(String favoriteColor) {
-
+        this.favoriteColor = favoriteColor;
     }
 }
