@@ -22,4 +22,12 @@ public class MemberTest {
         Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
         assertEquals("Tim", testMember.getFirstName());
     }
+
+    @Test
+    public void getLastName_getsFirstName_String() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        assertEquals("the Enchanter", testMember.getLastName());
+    }
 }

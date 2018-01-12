@@ -20,4 +20,8 @@ public class Member {
         return this.firstName;
     }
 
+    public String getLastName() {
+        return "";
+    }
+
 }
