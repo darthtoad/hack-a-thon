@@ -33,6 +33,6 @@ public class Member {
     }
 
     public ArrayList<String> getSkills() {
-        return null;
+        return this.skills;
     }
 }

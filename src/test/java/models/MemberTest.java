@@ -51,6 +51,6 @@ public class MemberTest {
         ArrayList skills = new ArrayList();
         skills.add("Java");
         Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-        assertEquals("Java", testMember.getSkills());
+        assertEquals(skills, testMember.getSkills());
     }
 }
