@@ -45,7 +45,7 @@ public class Member {
     }
 
     public static ArrayList<Member> getAllMembers() {
-        return new ArrayList<Member>();
+        return memberInstances;
     }
 
     public static void clearAllMembers() {
