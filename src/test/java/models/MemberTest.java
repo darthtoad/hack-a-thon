@@ -148,6 +148,13 @@ public class MemberTest {
         assertEquals(1, Member.findByMemberId(m1.getMemberId()).getMemberId());
     }
 
+    @Test
+    public void findByMemberId_returnsCorrectSecondMember_Member() throws Exception {
+        Member m1 = setupNewMember();
+        Member m2 = setupNewMember2();
+        assertEquals(1, Member.findByMemberId(m2.getMemberId()).getMemberId());
+    }
+
     public Member setupNewMember(){
         ArrayList newSkills = new ArrayList();
         newSkills.add("Throwing");
