@@ -16,7 +16,7 @@ _This app allows a user to create a team for a Hack-A-Thon. You can add members 
 | It can save the first name of the member | getFirstName() | "Daniel" |
 | It can save the last name of the member | getLastName() | "Johnston" |
 | It can save the email of the member | getEmail() | "email@email.com" |
-| It can save the member's favorite color | getFavoriteColor() | "#AAAAAA" |
+| It can save the member's favorite color | getFavoriteColor() | "Blue" |
 | It can save the member's skills | getSkills() | "Java, Javascript" |
 | It can return all members | getAllMembers() | "Tim, John, etc." |
 | It can return specific members | findMemberById(2) | "John" |

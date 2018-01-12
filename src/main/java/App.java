@@ -36,7 +36,7 @@ public class App {
             String firstName = request.queryParams("first-name");
             String lastName = request.queryParams("last-name");
             String email = request.queryParams("email");
-            String favoriteColor = request.queryParams("favorite-color");
+            String favoriteColor = request.queryParams("favorite-color").toLowerCase();
             String[] skillsArr = request.queryParams("skills").split(" ");
             ArrayList<String> skills = new ArrayList<String>();
             for(String skill : skillsArr) {
