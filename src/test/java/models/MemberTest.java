@@ -108,6 +108,13 @@ public class MemberTest {
         assertEquals(1, m1.getMemberId());
     }
 
+    @Test
+    public void getMemberId_getsMemberIdWithMutlipleMembers_int() throws Exception {
+        Member m1 = setupNewMember();
+        Member m2 = setupNewMember2();
+        assertEquals(2, m2.getMemberId());
+    }
+
     public Member setupNewMember(){
         ArrayList newSkills = new ArrayList();
         newSkills.add("Throwing");
