@@ -29,6 +29,6 @@ public class Member {
     }
 
     public String getFavoriteColor() {
-        return "";
+        return this.favoriteColor;
     }
 }
