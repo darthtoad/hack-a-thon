@@ -39,4 +39,15 @@ public class TeamTest {
         Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
         assertEquals("In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", testTeam.getDescription());
     }
+
+    @Test
+    public void getMembers_getsMembers_ArrayList() {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        ArrayList<Member> members = new ArrayList<>();
+        members.add(testMember);
+        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
+        assertEquals(members, testTeam.getMembers());
+    }
 }

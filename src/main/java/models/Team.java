@@ -19,4 +19,8 @@ public class Team {
     public String getDescription() {
         return this.description;
     }
+
+    public ArrayList<Member> getMembers() {
+        return null;
+    }
 }
