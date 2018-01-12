@@ -51,4 +51,8 @@ public class Member {
     public void setFavoriteColor(String favoriteColor) {
         this.favoriteColor = favoriteColor;
     }
+
+    public void setSkills(ArrayList<String> skills) {
+
+    }
 }

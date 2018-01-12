@@ -89,4 +89,15 @@ public class MemberTest {
         testMember.setFavoriteColor("Ultraviolet");
         assertEquals("Ultraviolet", testMember.getFavoriteColor());
     }
+
+    @Test
+    public void setSkills_setsSkills_ArrayList() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        ArrayList differentSkills = new ArrayList();
+        differentSkills.add("React");
+        testMember.setSkills(differentSkills);
+        assertEquals("React", testMember.getSkills());
+    }
 }
