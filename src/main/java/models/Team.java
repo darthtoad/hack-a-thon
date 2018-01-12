@@ -32,6 +32,16 @@ public class Team {
         return this.teamId;
     }
 
+    public static ArrayList<Team> getAllTeams() {
+        return new ArrayList<Team>();
+    }
+
+    public static void clearAllTeams() {
+        instances.clear();
+    }
+
+
+
     public void setName(String name) {
         this.name = name;
     }

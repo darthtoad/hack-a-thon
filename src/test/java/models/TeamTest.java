@@ -1,5 +1,7 @@
 package models;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,6 +9,16 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class TeamTest {
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        Team.clearAllTeams();
+    }
+
     @Test
     public void TeamInstantiatesCorrectly() {
         ArrayList skills = new ArrayList();
@@ -103,5 +115,57 @@ public class TeamTest {
         members.add(testMember);
         Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
         assertEquals(1, testTeam.getTeamId());
+    }
+
+    @Test
+    public void getAllTeams_AllTeamsAreCorrectlyReturned_ArrayList() {
+        setupNewTeam();
+        setupNewTeam2();
+        assertEquals(2, Team.getAllTeams().size());
+    }
+
+    public Member setupNewMember(){
+        ArrayList newSkills = new ArrayList();
+        newSkills.add("Throwing");
+        newSkills.add("Driving");
+        return new Member("Mr.", "T", "IPity@theFool.com", "Gold (chains)", newSkills);
+    }
+
+    public Member setupNewMember2() {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        return new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+    }
+
+    public Member setupNewMember3() {
+        ArrayList skills = new ArrayList();
+        skills.add("Javascript");
+        skills.add("Node.js");
+        skills.add("React.js");
+        skills.add("SQL");
+        return new Member("Loren", "Ipsum", "blah@blah.com", "grey", skills);
+    }
+
+    public Member setupNewMember4() {
+        ArrayList skills = new ArrayList();
+        skills.add("Assembly");
+        skills.add("Machine Code");
+        skills.add("C");
+        skills.add("C++");
+        return new Member("Darth", "Toad", "darth.toad@blah.com", "red", skills);
+    }
+
+    public Team setupNewTeam() {
+        ArrayList<Member> members = new ArrayList<>();
+        members.add(setupNewMember());
+        members.add(setupNewMember2());
+        return new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
+    }
+
+    public Team setupNewTeam2() {
+        ArrayList<Member> members = new ArrayList<>();
+        members.add(setupNewMember3());
+        members.add(setupNewMember4());
+        return new Team("The League of Unextraordinary Wildmen", "Normal men of the wild who want to shut down a coal power plant in Nevada", members);
     }
 }
