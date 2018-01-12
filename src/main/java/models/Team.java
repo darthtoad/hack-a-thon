@@ -31,4 +31,8 @@ public class Team {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setMembers(ArrayList<Member> members) {
+        //this.members = members;
+    }
 }
