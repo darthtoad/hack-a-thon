@@ -33,6 +33,6 @@ public class Team {
     }
 
     public void setMembers(ArrayList<Member> members) {
-        //this.members = members;
+        this.members = members;
     }
 }
