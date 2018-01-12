@@ -13,6 +13,6 @@ public class Team {
     }
 
     public String getName() {
-        return "";
+        return this.name;
     }
 }
