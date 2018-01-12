@@ -40,7 +40,9 @@ public class Team {
         instances.clear();
     }
 
-
+    public static Team findById(int teamId){
+        return instances.get(teamId-1);
+    }
 
     public void setName(String name) {
         this.name = name;

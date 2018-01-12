@@ -132,6 +132,13 @@ public class TeamTest {
         assertTrue(Team.getAllTeams().contains(setupNewTeam2()));
     }
 
+    @Test
+    public void getTeamById_returnsCorrectTeam_Team() throws Exception {
+        Team t1 = setupNewTeam();
+        Team t2 = setupNewTeam2();
+        assertEquals(2, Team.findById(t1.getTeamId()).getTeamId());
+    }
+
     public Member setupNewMember(){
         ArrayList newSkills = new ArrayList();
         newSkills.add("Throwing");
