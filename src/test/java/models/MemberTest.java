@@ -14,4 +14,12 @@ public class MemberTest {
         Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
         assertEquals(true, testMember instanceof Member);
     }
+
+    @Test
+    public void getFirstName_getsFirstName_Tim() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        assertEquals("Tim", testMember.getFirstName());
+    }
 }

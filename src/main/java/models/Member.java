@@ -15,4 +15,9 @@ public class Member {
         this.favoriteColor = favoriteColor;
         this.skills = skills;
     }
+
+    public String getFirstName() {
+        return "";
+    }
+
 }
