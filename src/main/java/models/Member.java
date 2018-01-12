@@ -43,4 +43,8 @@ public class Member {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public void setEmail(String email) {
+
+    }
 }

@@ -71,4 +71,13 @@ public class MemberTest {
         testMember.setLastName("John");
         assertEquals("John", testMember.getLastName());
     }
+
+    @Test
+    public void setEmail_setsEmail_String() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        testMember.setEmail("com@com.com");
+        assertEquals("com@com.com", testMember.getEmail());
+    }
 }
