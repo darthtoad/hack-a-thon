@@ -44,6 +44,10 @@ public class Member {
         return this.memberId;
     }
 
+    public static ArrayList<Member> getAllMembers() {
+        return new ArrayList<Member>();
+    }
+
     public static void clearAllMembers() {
          memberInstances.clear();
     }
