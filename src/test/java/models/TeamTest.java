@@ -133,10 +133,10 @@ public class TeamTest {
     }
 
     @Test
-    public void getTeamById_returnsCorrectTeam_Team() throws Exception {
+    public void findById_returnsCorrectTeam_Team() throws Exception {
         Team t1 = setupNewTeam();
         Team t2 = setupNewTeam2();
-        assertEquals(2, Team.findById(t1.getTeamId()).getTeamId());
+        assertEquals(1, Team.findById(t1.getTeamId()).getTeamId());
     }
 
     public Member setupNewMember(){
