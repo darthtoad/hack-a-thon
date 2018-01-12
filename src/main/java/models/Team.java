@@ -23,4 +23,8 @@ public class Team {
     public ArrayList<Member> getMembers() {
         return this.members;
     }
+
+    public void setName(String name) {
+        //this.name = name;
+    }
 }
