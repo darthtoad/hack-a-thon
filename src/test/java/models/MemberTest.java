@@ -142,7 +142,7 @@ public class MemberTest {
     }
 
     @Test
-    public void findById_returnsCorrectMember_Member() throws Exception {
+    public void findByMemberId_returnsCorrectMember_Member() throws Exception {
         Member m1 = setupNewMember();
         Member m2 = setupNewMember2();
         assertEquals(1, Member.findByMemberId(m1.getMemberId()).getMemberId());

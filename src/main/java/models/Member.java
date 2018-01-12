@@ -45,8 +45,7 @@ public class Member {
     }
 
     public static Member findByMemberId(int memberId){
-        return new Member("afsd", "dfas", "dsfa", "fdas", new ArrayList<String>());
-        //memberInstances.get(memberId-1);
+        return memberInstances.get(memberId-1);
     }
 
     public static ArrayList<Member> getAllMembers() {
