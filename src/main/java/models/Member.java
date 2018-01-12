@@ -53,6 +53,6 @@ public class Member {
     }
 
     public void setSkills(ArrayList<String> skills) {
-
+        this.skills = skills;
     }
 }

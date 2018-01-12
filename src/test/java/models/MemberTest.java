@@ -98,6 +98,6 @@ public class MemberTest {
         ArrayList differentSkills = new ArrayList();
         differentSkills.add("React");
         testMember.setSkills(differentSkills);
-        assertEquals("React", testMember.getSkills());
+        assertEquals(differentSkills, testMember.getSkills());
     }
 }
