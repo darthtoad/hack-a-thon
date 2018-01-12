@@ -127,18 +127,25 @@ public class MemberTest {
     }
 
     @Test
-    public void getAllMembers_AllMembersAreCorrectlyReturned_ArrayList() {
+    public void getAllMembers_AllMembersAreCorrectlyReturned_ArrayList() throws Exception {
         setupNewMember();
         setupNewMember2();
         assertEquals(2, Member.getAllMembers().size());
     }
 
     @Test
-    public void getAllMembers_AllMembersContainAllMembers_true() {
+    public void getAllMembers_AllMembersContainAllMembers_true() throws Exception {
         setupNewMember();
         setupNewMember2();
         assertTrue(Member.getAllMembers().contains(setupNewMember()));
         assertTrue(Member.getAllMembers().contains(setupNewMember2()));
+    }
+
+    @Test
+    public void findById_returnsCorrectMember_Member() throws Exception {
+        Member m1 = setupNewMember();
+        Member m2 = setupNewMember2();
+        assertEquals(1, Member.findByMemberId(m1.getMemberId()).getMemberId());
     }
 
     public Member setupNewMember(){
