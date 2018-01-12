@@ -46,4 +46,11 @@ public class MemberTest {
         assertEquals("blue", testMember.getFavoriteColor());
     }
 
+    @Test
+    public void getSkills_getsSkills_ArrayList() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        assertEquals("Java", testMember.getSkills());
+    }
 }

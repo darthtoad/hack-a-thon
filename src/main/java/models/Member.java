@@ -31,4 +31,8 @@ public class Member {
     public String getFavoriteColor() {
         return this.favoriteColor;
     }
+
+    public ArrayList<String> getSkills() {
+        return null;
+    }
 }
