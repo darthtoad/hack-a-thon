@@ -11,4 +11,8 @@ public class Team {
         this.description = description;
         this.members = members;
     }
+
+    public String getName() {
+        return "";
+    }
 }
