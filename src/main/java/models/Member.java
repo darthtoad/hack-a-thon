@@ -17,7 +17,7 @@ public class Member {
     }
 
     public String getFirstName() {
-        return "";
+        return this.firstName;
     }
 
 }
