@@ -21,6 +21,6 @@ public class Team {
     }
 
     public ArrayList<Member> getMembers() {
-        return null;
+        return this.members;
     }
 }
