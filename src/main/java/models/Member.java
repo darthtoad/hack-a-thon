@@ -27,4 +27,8 @@ public class Member {
     public String getEmail() {
         return this.email;
     }
+
+    public String getFavoriteColor() {
+        return "";
+    }
 }

@@ -38,4 +38,12 @@ public class MemberTest {
         Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
         assertEquals("thing@thing.com", testMember.getEmail());
     }
+    @Test
+    public void getFavoriteColor_getsFavoriteColor_String() throws Exception {
+        ArrayList skills = new ArrayList();
+        skills.add("Java");
+        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
+        assertEquals("blue", testMember.getFavoriteColor());
+    }
+
 }
