@@ -35,4 +35,8 @@ public class Member {
     public ArrayList<String> getSkills() {
         return this.skills;
     }
+
+    public void setFirstName(String firstName) {
+
+    }
 }
