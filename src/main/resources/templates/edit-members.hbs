@@ -1,0 +1,30 @@
+{{#partial "content"}}
+    <h1>Edit Members</h1>
+        <form action='/teams/{{foundTeam.teamId}}/edit/finish' method="post">
+        {{#each allMembers}}
+            <div class="form-group">
+                <label for="first-name">First name</label>
+                <input id="first-name" name="first-name" class="form-control" type="text" value="{{firstName}}">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input id="last-name" name="last-name" class="form-control" type="text" value="{{lastName}}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="form-control" type="text" value="{{email}}">
+            </div>
+            <div class="form-group">
+                <label for="favorite-color">Favorite Color</label>
+                <input id="favorite-color" name="favorite-color" class="form-control" type="text" value="{{favoriteColor}}">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills (Please separate by spaces. No commas)</label>
+                <input id="skills" name="skills" class="form-control" type="text" value="{{skills}}">
+            </div>
+        {{/each}}
+        <button type="submit" class="btn">Finish Editing</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}

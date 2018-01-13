@@ -65,5 +65,53 @@ public class App {
             model.put("teams", teams);
             return new ModelAndView(model, "display.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/teams/:teamId", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            Team foundTeam = Team.findById(idOfTeamToFind);
+            model.put("foundTeam", foundTeam);
+            return new ModelAndView(model, "edit.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/teams/:teamId/edit", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            Team foundTeam = Team.findById(idOfTeamToFind);
+            String teamName = request.queryParams("team-name");
+            String description = request.queryParams("description");
+            foundTeam.setName(teamName);
+            foundTeam.setDescription(description);
+            ArrayList<Member> allMembers = foundTeam.getMembers();
+            model.put("foundTeam", foundTeam);
+            model.put("allMembers", allMembers);
+            return new ModelAndView(model, "edit-members.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/teams/:teamId/edit/finish", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            Team foundTeam = Team.findById(idOfTeamToFind);
+            ArrayList<Member> allMembers = foundTeam.getMembers();
+            String firstName = request.queryParams("first-name");
+            String lastName = request.queryParams("last-name");
+            String email = request.queryParams("email");
+            String favoriteColor = request.queryParams("favorite-color").toLowerCase();
+            String[] skillsArr = request.queryParams("skills").split(" ");
+            ArrayList<String> skills = new ArrayList<String>();
+            for(String skill : skillsArr) {
+                skills.add(skill);
+            }
+            for(Member member : allMembers) {
+                member.setFirstName(firstName);
+                member.setLastName(lastName);
+                member.setEmail(email);
+                member.setFavoriteColor(favoriteColor);
+                member.setSkills(skills);
+            }
+            ArrayList teams = Team.getAllTeams();
+            model.put("teams", teams);
+            return new ModelAndView(model, "display.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
