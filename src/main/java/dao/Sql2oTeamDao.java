@@ -59,7 +59,7 @@ public class Sql2oTeamDao implements TeamDao {
     @Override
     public void deleteById(int teamId) {
         try (Connection con = sql2o.open()) {
-            con.createQuery("DELETE * FROM team WHERE teamId = :teamId")
+            con.createQuery("DELETE FROM team WHERE teamId = :teamId")
                     .addParameter("teamId", teamId)
                     .executeUpdate();
         } catch (Sql2oException ex) {
