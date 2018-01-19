@@ -18,5 +18,5 @@ public interface TeamDao {
 //
     void deleteById(int teamId);
 //
-//    void clearAllTeams();
+    void clearAllTeams();
 }

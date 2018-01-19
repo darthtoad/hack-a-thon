@@ -71,4 +71,14 @@ public class Sql2oTeamDaoTest {
         assertEquals(0, teamDao.getAll().size());
     }
 
+    @Test
+    public void clearAllTeamsDeletesAll() throws Exception {
+        Team team = new Team("The Awesome People", "We are awesome");
+        Team team2 = new Team("The A-Team", "In 1972, a crack commando unit...");
+        teamDao.add(team);
+        teamDao.add(team2);
+        teamDao.clearAllTeams();
+        assertEquals(0, teamDao.getAll().size());
+    }
+
 }
