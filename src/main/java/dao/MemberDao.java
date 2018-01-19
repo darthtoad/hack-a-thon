@@ -11,4 +11,6 @@ public interface MemberDao {
     List<Member> getAll();
 
     Member findById(int memberId);
+
+    void editMember(int memberId, int teamId, String firstName, String lastName, String email, String favoriteColor, String skills);
 }

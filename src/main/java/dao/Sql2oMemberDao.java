@@ -42,4 +42,21 @@ public class Sql2oMemberDao implements MemberDao {
                     .executeAndFetchFirst(Member.class);
         }
     }
+
+    @Override
+    public void editMember(int memberId, int teamId, String firstName, String lastName, String email, String favoriteColor, String skills) {
+//        try (Connection con = sql2o.open()) {
+//            con.createQuery("UPDATE member SET teamId = :teamId, firstName = :firstName, lastName = :lastName, email = :email, favoriteColor = :favoriteColor, skills = :skills WHERE memberId = :memberId")
+//                    .addParameter("teamId", teamId)
+//                    .addParameter("firstName", firstName)
+//                    .addParameter("lastName", lastName)
+//                    .addParameter("email", email)
+//                    .addParameter("favoriteColor", favoriteColor)
+//                    .addParameter("skills", skills)
+//                    .addParameter("memberId", memberId)
+//                    .executeUpdate();
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+    }
 }
