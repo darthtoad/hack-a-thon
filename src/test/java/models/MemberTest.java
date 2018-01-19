@@ -52,14 +52,12 @@ public class MemberTest {
         assertEquals("John", testMember.getFirstName());
     }
 
-//    @Test
-//    public void setLastName_setsLastName_String() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        testMember.setLastName("John");
-//        assertEquals("John", testMember.getLastName());
-//    }
+    @Test
+    public void setLastName_setsLastName_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        testMember.setLastName("John");
+        assertEquals("John", testMember.getLastName());
+    }
 //
 //    @Test
 //    public void setEmail_setsEmail_String() throws Exception {
