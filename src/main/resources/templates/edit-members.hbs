@@ -23,7 +23,14 @@
                 <input id="skills" name="skills" class="form-control" type="text" value="{{skills}}">
             </div>
         {{/each}}
-        <button type="submit" class="btn">Finish Editing</button>
+        {{#each allMembers}}
+            {{firstName}} {{lastName}}
+            <form action="/teams/{{foundTeam.teamId}}/members/{{memberId}}/delete" method="post">
+                <button type="submit" class="btn">Remove</button>
+            </form>
+            <br>
+        {{/each}}
+        <a href="/teams/display/">Finish Editing</a>
     </form>
 {{/partial}}
 

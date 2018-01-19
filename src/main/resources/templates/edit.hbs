@@ -14,6 +14,9 @@
         </div>
         <button type="submit" class="btn">Edit members!</button>
     </form>
+    <form action="/teams/{{foundTeam.teamId}}/delete" method="post">
+        <button type="submit" class="btn">Delete Team</button>
+    </form>
 {{/partial}}
 
 {{> layout.hbs}}
