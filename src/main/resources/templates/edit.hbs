@@ -6,11 +6,11 @@
     <form action='/teams/{{foundTeam.teamId}}/edit' method="post">
         <div class="form-group">
             <label for="team-name">Team name</label>
-            <input id="team-name" name="team-name" class="form-control" type="text">
+            <input id="team-name" name="team-name" class="form-control" value="{{foundTeam.name}}" type="text">
         </div>
         <div class="form-group">
             <label for="description">Team description</label>
-            <input id="description" name="description" class="form-control" type="text">
+            <input id="description" name="description" class="form-control" value="{{foundTeam.description}}" type="text">
         </div>
         <button type="submit" class="btn">Edit members!</button>
     </form>
