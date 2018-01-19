@@ -40,6 +40,16 @@ public class App {
             return new ModelAndView(model, "members.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/teams/:teamId/members/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int teamId = Integer.parseInt(request.params("teamId"));
+            Team newTeam = teamDao.findById(teamId);
+            List<Member> allMembers = teamDao.getAllTeamMembers(teamId);
+            model.put("allMembers", allMembers);
+            model.put("newTeam", newTeam);
+            return new ModelAndView(model, "members.hbs");
+        }, new HandlebarsTemplateEngine());
+
         post("/teams/:teamId/members/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String firstName = request.queryParams("first-name");

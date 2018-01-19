@@ -1,4 +1,5 @@
 {{#partial "content"}}
+    <a href="/teams/{{foundTeam.teamId}}/members/new"><h1>Add New Member</h1></a>
     <h1>Edit Members</h1>
         <form action='/teams/{{foundTeam.teamId}}/members/edit' method="post">
         {{#each allMembers}}
