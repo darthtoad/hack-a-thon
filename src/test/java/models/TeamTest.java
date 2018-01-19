@@ -50,17 +50,12 @@ public class TeamTest {
         assertEquals("A Team", testTeam.getName());
     }
 
-//    @Test
-//    public void setDescription_setsDescription_String() {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        ArrayList<Member> members = new ArrayList<>();
-//        members.add(testMember);
-//        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
-//        testTeam.setDescription("A Team");
-//        assertEquals("A Team", testTeam.getDescription());
-//    }
+    @Test
+    public void setDescription_setsDescription_String() {
+        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit");
+        testTeam.setDescription("A Team");
+        assertEquals("A Team", testTeam.getDescription());
+    }
 //
 //    @Test
 //    public void setMembers_setsMembers_ArrayList() {
