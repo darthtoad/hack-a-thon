@@ -39,14 +39,12 @@ public class MemberTest {
         assertEquals("blue", testMember.getFavoriteColor());
     }
 //
-//    @Test
-//    public void getSkills_getsSkills_ArrayList() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        assertEquals(skills, testMember.getSkills());
-//    }
-//
+    @Test
+    public void getSkills_getsSkills_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        assertEquals("Java", testMember.getSkills());
+    }
+
 //    @Test
 //    public void setFirstName_setsFirstName_String() throws Exception {
 //        ArrayList skills = new ArrayList();
