@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Team {
     private String name;
     private String description;
-    private ArrayList<Member> members;
-    private static ArrayList<Team> instances = new ArrayList<>();
+//    private ArrayList<Member> members;
+//    private static ArrayList<Team> instances = new ArrayList<>();
     private int teamId;
-    public Team(String name, String description, ArrayList<Member> members) {
+    public Team(String name, String description/*, ArrayList<Member> members*/) {
         this.name = name;
         this.description = description;
-        this.members = members;
-        instances.add(this);
-        this.teamId = instances.size();
+//        this.members = members;
+//        instances.add(this);
+//        this.teamId = instances.size();
     }
 
     public String getName() {
@@ -24,25 +24,29 @@ public class Team {
         return this.description;
     }
 
-    public ArrayList<Member> getMembers() {
-        return this.members;
-    }
+//    public ArrayList<Member> getMembers() {
+//        return this.members;
+//    }
 
     public int getTeamId() {
         return this.teamId;
     }
 
-    public static ArrayList<Team> getAllTeams() {
-        return instances;
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
-    public static void clearAllTeams() {
-        instances.clear();
-    }
-
-    public static Team findById(int teamId){
-        return instances.get(teamId-1);
-    }
+    //    public static ArrayList<Team> getAllTeams() {
+//        return instances;
+//    }
+//
+//    public static void clearAllTeams() {
+//        instances.clear();
+//    }
+//
+//    public static Team findById(int teamId){
+//        return instances.get(teamId-1);
+//    }
 
     public void setName(String name) {
         this.name = name;
@@ -52,7 +56,7 @@ public class Team {
         this.description = description;
     }
 
-    public void setMembers(ArrayList<Member> members) {
-        this.members = members;
-    }
+//    public void setMembers(ArrayList<Member> members) {
+//        this.members = members;
+//    }
 }
