@@ -16,13 +16,11 @@ public class MemberTest {
         assertEquals(true, testMember instanceof Member);
     }
 
-//    @Test
-//    public void getFirstName_getsFirstName_Tim() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        assertEquals("Tim", testMember.getFirstName());
-//    }
+    @Test
+    public void getFirstName_getsFirstName_Tim() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        assertEquals("Tim", testMember.getFirstName());
+    }
 //
 //    @Test
 //    public void getLastName_getsLastName_String() throws Exception {
