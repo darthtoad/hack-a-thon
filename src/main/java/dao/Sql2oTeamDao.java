@@ -42,4 +42,17 @@ public class Sql2oTeamDao implements TeamDao {
             .executeAndFetch(Team.class);
         }
     }
+
+    @Override
+    public void editTeam(String name, String description, int teamId) {
+        try (Connection con = sql2o.open()) {
+            con.createQuery("UPDATE team SET name = :name, description = :description WHERE teamId = :teamId")
+                    .addParameter("name", name)
+                    .addParameter("description", description)
+                    .addParameter("teamId", teamId)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
 }

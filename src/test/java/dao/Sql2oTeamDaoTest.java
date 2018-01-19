@@ -53,4 +53,12 @@ public class Sql2oTeamDaoTest {
         assertEquals(2, teamDao.getAll().size());
     }
 
+    @Test
+    public void editTeamEditsTeam() throws Exception {
+        Team team = new Team("The Awesome People", "We are awesome");
+        teamDao.add(team);
+        teamDao.editTeam("Poop", "pee", team.getTeamId());
+        assertEquals("Poop", team.getName());
+    }
+
 }
