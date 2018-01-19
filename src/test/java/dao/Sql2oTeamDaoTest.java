@@ -44,4 +44,13 @@ public class Sql2oTeamDaoTest {
         assertEquals(team.getName(), foundTeam.getName());
     }
 
+    @Test
+    public void getAllGetsAllTeams() throws Exception {
+        Team team = new Team("The Awesome People", "We are awesome");
+        Team team2 = new Team("The A-Team", "In 1972, a crack commando unit...");
+        teamDao.add(team);
+        teamDao.add(team2);
+        assertEquals(2, teamDao.getAll().size());
+    }
+
 }
