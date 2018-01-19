@@ -15,4 +15,6 @@ public interface MemberDao {
     void editMember(int memberId, int teamId, String firstName, String lastName, String email, String favoriteColor, String skills);
 
     void deleteMemberById(int memberId);
+
+    void clearAllMembers();
 }

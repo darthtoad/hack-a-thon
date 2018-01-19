@@ -70,4 +70,14 @@ public class Sql2oMemberDao implements MemberDao {
             System.out.println(ex);
         }
     }
+
+    @Override
+    public void clearAllMembers() {
+        try (Connection con = sql2o.open()) {
+//            con.createQuery("DELETE FROM member")
+//                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
 }
