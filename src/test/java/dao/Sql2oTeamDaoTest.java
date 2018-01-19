@@ -81,4 +81,12 @@ public class Sql2oTeamDaoTest {
         assertEquals(0, teamDao.getAll().size());
     }
 
+    @Test
+    public void getAllTeamMembersGetsAllMembersOfATeam() throws Exception {
+        Team team = new Team("The Awesome People", "We are awesome");
+        Member member = new Member(1, "Mr", "T", "pity@the.fool", "Gold", "Throwing helluva far, Javascript");
+        Member member1 = new Member(1, "Comma", "Chameleon", "Icome@and.go", "Green", "Chamoflauge, eating pizza");
+        assertEquals(2, teamDao.getAllTeamMembers(1).size());
+    }
+
 }

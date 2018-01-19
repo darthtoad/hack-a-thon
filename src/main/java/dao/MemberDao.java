@@ -17,4 +17,5 @@ public interface MemberDao {
     void deleteMemberById(int memberId);
 
     void clearAllMembers();
+
 }

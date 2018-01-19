@@ -10,7 +10,7 @@ public interface TeamDao {
 
     List<Team> getAll();
 //
-//    List<Member> getAllTeamMembers(int teamId);
+    List<Member> getAllTeamMembers(int teamId);
 //
     Team findById(int teamId);
 //
