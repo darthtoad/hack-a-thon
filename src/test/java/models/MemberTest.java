@@ -28,13 +28,11 @@ public class MemberTest {
         assertEquals("the Enchanter", testMember.getLastName());
     }
 //
-//    @Test
-//    public void getEmail_getsEmail_String() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        assertEquals("thing@thing.com", testMember.getEmail());
-//    }
+    @Test
+    public void getEmail_getsEmail_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        assertEquals("thing@thing.com", testMember.getEmail());
+    }
 //    @Test
 //    public void getFavoriteColor_getsFavoriteColor_String() throws Exception {
 //        ArrayList skills = new ArrayList();
