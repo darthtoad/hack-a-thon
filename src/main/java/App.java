@@ -68,21 +68,16 @@ public class App {
             return new ModelAndView(model, "display.hbs");
         }, new HandlebarsTemplateEngine());
 //
-//        get("/teams/display/finish", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            ArrayList teams = Team.getAllTeams();
-//            model.put("teams", teams);
-//            return new ModelAndView(model, "display.hbs");
-//        }, new HandlebarsTemplateEngine());
-//
-//        get("/teams/:teamId", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
-//            Team foundTeam = Team.findById(idOfTeamToFind);
-//            model.put("foundTeam", foundTeam);
-//            return new ModelAndView(model, "edit.hbs");
-//        }, new HandlebarsTemplateEngine());
-//
+        get("/teams/:teamId", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            Team foundTeam = teamDao.findById(idOfTeamToFind);
+            model.put("foundTeam", foundTeam);
+//            List<Member> allMembers = teamDao.getAllTeamMembers(foundTeam.getTeamId());
+//            model.put("allMembers", allMembers);
+            return new ModelAndView(model, "edit.hbs");
+        }, new HandlebarsTemplateEngine());
+
 //        post("/teams/:teamId/edit", (request, response) -> {
 //            Map<String, Object> model = new HashMap<>();
 //            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
