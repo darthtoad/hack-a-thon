@@ -10,6 +10,7 @@ import org.sql2o.Sql2o;
 import static org.junit.Assert.*;
 
 public class Sql2oTeamDaoTest {
+    private Sql2oMemberDao memberDao;
     private Sql2oTeamDao teamDao;
     private Connection conn;
 
@@ -18,6 +19,7 @@ public class Sql2oTeamDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
         teamDao = new Sql2oTeamDao(sql2o);
+        memberDao = new Sql2oMemberDao(sql2o);
 
         conn = sql2o.open();
     }
@@ -86,6 +88,9 @@ public class Sql2oTeamDaoTest {
         Team team = new Team("The Awesome People", "We are awesome");
         Member member = new Member(1, "Mr", "T", "pity@the.fool", "Gold", "Throwing helluva far, Javascript");
         Member member1 = new Member(1, "Comma", "Chameleon", "Icome@and.go", "Green", "Chamoflauge, eating pizza");
+        teamDao.add(team);
+        memberDao.add(member);
+        memberDao.add(member1);
         assertEquals(2, teamDao.getAllTeamMembers(1).size());
     }
 
