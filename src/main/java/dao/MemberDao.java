@@ -10,4 +10,5 @@ public interface MemberDao {
 
     List<Member> getAll();
 
+    Member findById(int memberId);
 }
