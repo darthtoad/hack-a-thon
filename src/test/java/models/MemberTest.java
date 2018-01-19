@@ -45,15 +45,13 @@ public class MemberTest {
         assertEquals("Java", testMember.getSkills());
     }
 
-//    @Test
-//    public void setFirstName_setsFirstName_String() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        testMember.setFirstName("John");
-//        assertEquals("John", testMember.getFirstName());
-//    }
-//
+    @Test
+    public void setFirstName_setsFirstName_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        testMember.setFirstName("John");
+        assertEquals("John", testMember.getFirstName());
+    }
+
 //    @Test
 //    public void setLastName_setsLastName_String() throws Exception {
 //        ArrayList skills = new ArrayList();
