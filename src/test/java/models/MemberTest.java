@@ -33,13 +33,11 @@ public class MemberTest {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
         assertEquals("thing@thing.com", testMember.getEmail());
     }
-//    @Test
-//    public void getFavoriteColor_getsFavoriteColor_String() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        assertEquals("blue", testMember.getFavoriteColor());
-//    }
+    @Test
+    public void getFavoriteColor_getsFavoriteColor_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        assertEquals("blue", testMember.getFavoriteColor());
+    }
 //
 //    @Test
 //    public void getSkills_getsSkills_ArrayList() throws Exception {
