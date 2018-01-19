@@ -21,14 +21,12 @@ public class MemberTest {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
         assertEquals("Tim", testMember.getFirstName());
     }
-//
-//    @Test
-//    public void getLastName_getsLastName_String() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        assertEquals("the Enchanter", testMember.getLastName());
-//    }
+
+    @Test
+    public void getLastName_getsLastName_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        assertEquals("the Enchanter", testMember.getLastName());
+    }
 //
 //    @Test
 //    public void getEmail_getsEmail_String() throws Exception {
