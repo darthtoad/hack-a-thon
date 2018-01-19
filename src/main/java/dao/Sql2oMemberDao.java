@@ -62,6 +62,12 @@ public class Sql2oMemberDao implements MemberDao {
 
     @Override
     public void deleteMemberById(int memberId) {
-
+        try (Connection con = sql2o.open()) {
+            con.createQuery("DELETE FROM member WHERE memberId = :memberId")
+                    .addParameter("memberId", memberId)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 }
