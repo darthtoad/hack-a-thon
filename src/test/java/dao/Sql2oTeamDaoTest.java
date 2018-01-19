@@ -35,4 +35,13 @@ public class Sql2oTeamDaoTest {
         assertNotEquals(originalTeamId, team.getTeamId());
     }
 
+    @Test
+    public void existingTeamCanBeFoundById() throws Exception {
+        Team team = new Team("The Awesome People", "We are awesome");
+        teamDao.add(team);
+        Team foundTeam = teamDao.findById(team.getTeamId());
+        assertEquals(team.getTeamId(), foundTeam.getTeamId());
+        assertEquals(team.getName(), foundTeam.getName());
+    }
+
 }
