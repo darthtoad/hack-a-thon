@@ -7,11 +7,11 @@ public class Member {
     private String lastName;
     private String email;
     private String favoriteColor;
-    private ArrayList<String> skills;
+    private String skills;
     private int memberId;
     private int teamId;
 //    private static ArrayList<Member> memberInstances = new ArrayList<Member>();
-    public Member(int teamId, String firstName, String lastName, String email, String favoriteColor, ArrayList<String> skills) {
+    public Member(int teamId, String firstName, String lastName, String email, String favoriteColor, String skills) {
         this.teamId = teamId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,7 +51,7 @@ public class Member {
         return this.favoriteColor;
     }
 
-    public ArrayList<String> getSkills() {
+    public String getSkills() {
         return this.skills;
     }
 
@@ -66,8 +66,6 @@ public class Member {
 //    public static ArrayList<Member> getAllMembers() {
 //        return memberInstances;
 //    }
-//
-//    public static void clearAllMembers() {
 
     @Override
     public boolean equals(Object o) {
@@ -98,7 +96,10 @@ public class Member {
         return result;
     }
 
-//         memberInstances.clear();
+//
+//    public static void clearAllMembers() {
+
+    //         memberInstances.clear();
 //    }
 
     public void setFirstName(String firstName) {
@@ -117,7 +118,7 @@ public class Member {
         this.favoriteColor = favoriteColor;
     }
 
-    public void setSkills(ArrayList<String> skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
     }
 }
