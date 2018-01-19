@@ -73,16 +73,12 @@ public class MemberTest {
         assertEquals("Ultraviolet", testMember.getFavoriteColor());
     }
 //
-//    @Test
-//    public void setSkills_setsSkills_ArrayList() throws Exception {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        ArrayList differentSkills = new ArrayList();
-//        differentSkills.add("React");
-//        testMember.setSkills(differentSkills);
-//        assertEquals(differentSkills, testMember.getSkills());
-//    }
+    @Test
+    public void setSkills_setsSkills_String() throws Exception {
+        Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
+        testMember.setSkills("Kung Fu");
+        assertEquals("Kung Fu", testMember.getSkills());
+    }
 //
 //    @Test
 //    public void getMemberId_getsMemberId_int() throws Exception {
