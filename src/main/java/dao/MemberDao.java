@@ -13,4 +13,6 @@ public interface MemberDao {
     Member findById(int memberId);
 
     void editMember(int memberId, int teamId, String firstName, String lastName, String email, String favoriteColor, String skills);
+
+    void deleteMemberById(int memberId);
 }
