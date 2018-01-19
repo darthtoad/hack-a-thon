@@ -42,29 +42,14 @@ public class TeamTest {
         assertEquals("In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", testTeam.getDescription());
     }
 //
-//    @Test
-//    public void getMembers_getsMembers_ArrayList() {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        ArrayList<Member> members = new ArrayList<>();
-//        members.add(testMember);
-//        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
-//        assertEquals(members, testTeam.getMembers());
-//    }
-//
-//    @Test
-//    public void setName_setsName_String() {
-//        ArrayList skills = new ArrayList();
-//        skills.add("Java");
-//        Member testMember = new Member("Tim", "the Enchanter", "thing@thing.com", "blue", skills);
-//        ArrayList<Member> members = new ArrayList<>();
-//        members.add(testMember);
-//        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit", members);
-//        testTeam.setName("A Team");
-//        assertEquals("A Team", testTeam.getName());
-//    }
-//
+
+    @Test
+    public void setName_setsName_String() {
+        Team testTeam = new Team("The A-Team", "In 1972, a crack commando unit was sent to prison by a military court for a crime they didn't commit");
+        testTeam.setName("A Team");
+        assertEquals("A Team", testTeam.getName());
+    }
+
 //    @Test
 //    public void setDescription_setsDescription_String() {
 //        ArrayList skills = new ArrayList();
