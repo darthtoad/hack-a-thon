@@ -3,7 +3,7 @@ SET MODE PostgreSQL;
 CREATE TABLE IF NOT EXISTS team (
     id int PRIMARY KEY auto_increment,
     name VARCHAR,
-    description INTEGER
+    description VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS member (
@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS member (
     lastName VARCHAR,
     email VARCHAR,
     favoritecolor VARCHAR,
-    skills VARCHAR,
+    skills VARCHAR
 );
