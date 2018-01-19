@@ -58,7 +58,9 @@ public class Sql2oTeamDaoTest {
         Team team = new Team("The Awesome People", "We are awesome");
         teamDao.add(team);
         teamDao.editTeam("Poop", "pee", team.getTeamId());
-        assertEquals("Poop", team.getName());
+        Team updatedTeam = teamDao.findById(team.getTeamId());
+        assertNotEquals("Poop", team.getName());
+        assertEquals("Poop", updatedTeam.getName());
     }
 
 }
