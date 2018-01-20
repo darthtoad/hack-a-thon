@@ -37,7 +37,7 @@ _Anyway, this app allows a user to create a team for a Hack-A-Thon. You can add 
 
 ## Setup/Installation Requirements
 
-* Click on the following [link](https://github.com/darthtoad/event-planner) to download the Event Planner
+* Click on the following [link](https://github.com/darthtoad/event-planner) to download the Hack-A-Thon
 * Choose one of the two options:
 A) Open in intelliJ and run the app.  
 B) Go to the src/main/java directory in the terminal/command line and issue this command sequence: javac App.java && java App
