@@ -119,6 +119,18 @@ public class App {
             return new ModelAndView(model, "display.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/teams/delete/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "delete.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/teams/delete/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            teamDao.clearAllTeams();
+            memberDao.clearAllMembers();
+            return new ModelAndView(model, "delete-success.hbs");
+        }, new HandlebarsTemplateEngine());
+
         post("/teams/:teamId/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfTeamToDelete = Integer.parseInt(request.params("teamId"));

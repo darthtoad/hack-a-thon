@@ -1,5 +1,6 @@
 {{#partial "content"}}
     <a href="/teams/{{foundTeam.teamId}}/members/new"><h1>Add New Member</h1></a>
+    <hr>
     <h1>Edit Members</h1>
         <form action='/teams/{{foundTeam.teamId}}/members/edit' method="post">
         {{#each allMembers}}
@@ -23,16 +24,18 @@
                 <label for="skills">Skills</label>
                 <input id="skills" name="skills" class="form-control" type="text" value="{{skills}}">
             </div>
+            <hr>
         {{/each}}
+        </form>
         {{#each allMembers}}
-            {{firstName}} {{lastName}}
+            Name: {{firstName}} {{lastName}}
             <form action="/teams/{{foundTeam.teamId}}/members/{{memberId}}/delete" method="post">
-                <button type="submit" class="btn">Remove</button>
+                <br><button type="submit" class="btn">Remove</button>
             </form>
-            <br>
+            <hr>
         {{/each}}
-        <a href="/teams/display/">Finish Editing</a>
-    </form>
+        <a href="/teams/display/"><h1>Finish Editing</h1></a>
+        <hr>
 {{/partial}}
 
 {{> layout.hbs}}

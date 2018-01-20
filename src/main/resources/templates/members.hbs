@@ -2,53 +2,59 @@
     Add members!
 {{/partial}}
 {{#partial "content"}}
-    {{#if allMembers}}
-        <h1>{{currentTeam.name}}</h1><br>
-        <h4>{{currentTeam.description}}</h4><br>
-        {{#each allMembers}}
-            <div style="background-color: {{favoriteColor}}">
-                <h5>Name:</h5>
-                <p>{{firstName}} {{lastName}}</p>
-                <h5>Email</h5>
-                <p>{{email}}</p>
-                <h5>Skills</h5>
-                <p>{{skills}}</p>
+    <div class="container">
+        {{#if allMembers}}
+            <h1>{{newTeam.name}}</h1><br>
+            <h4>{{newTeam.description}}</h4><br>
+            <hr>
+            {{#each allMembers}}
+                <div style="background-color: {{favoriteColor}}">
+                    <h5>Name:</h5>
+                    <p>{{firstName}} {{lastName}}</p>
+                    <h5>Email</h5>
+                    <p>{{email}}</p>
+                    <h5>Skills</h5>
+                    <p>{{skills}}</p>
+                </div>
+                <hr>
+            {{/each}}
+        {{else}}
+            <h1>{{newTeam.name}}</h1><br>
+            <h4>{{newTeam.description}}</h4><br>
+        {{/if}}
+        <h2>Add member</h2>
+        <form action='/teams/{{newTeam.teamId}}/members/new' method="post">
+            <div class="form-group">
+                <label for="first-name">First name</label>
+                <input id="first-name" name="first-name" class="form-control" type="text">
             </div>
-            <br>
-        {{/each}}
-    {{else}}
-        <h1>{{newTeam.name}}</h1><br>
-        <h4>{{newTeam.description}}</h4><br>
-    {{/if}}
-    <h2>Add member</h2>
-    <form action='/teams/{{newTeam.teamId}}/members/new' method="post">
-        <div class="form-group">
-            <label for="first-name">First name</label>
-            <input id="first-name" name="first-name" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label for="last-name">Last name</label>
-            <input id="last-name" name="last-name" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label for="favorite-color">Favorite Color</label>
-            <input id="favorite-color" name="favorite-color" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-            <label for="skills">Skills</label>
-            <input id="skills" name="skills" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn">Add Member!</button>
-    </form>
-    {{#if allMembers}}
-        <form action="/teams/display/" method="get">
-            <button type="submit" class="btn">Finish Team</button>
+            <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input id="last-name" name="last-name" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="favorite-color">Favorite Color</label>
+                <input id="favorite-color" name="favorite-color" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input id="skills" name="skills" class="form-control" type="text">
+            </div>
+            <button type="submit" class="btn">Add Member!</button>
         </form>
-    {{/if}}
+        {{#if allMembers}}
+            <hr>
+            <form action="/teams/display/" method="get">
+                <button type="submit" class="btn">Finish Team</button>
+            </form>
+        {{/if}}
+        <br><br><br>
+    </div>
+
 {{/partial}}
 
 {{> layout.hbs}}

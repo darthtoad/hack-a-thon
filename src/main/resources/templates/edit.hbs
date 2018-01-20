@@ -12,7 +12,7 @@
             <label for="description">Team description</label>
             <input id="description" name="description" class="form-control" value="{{foundTeam.description}}" type="text">
         </div>
-        <button type="submit" class="btn">Edit members!</button>
+        <button type="submit" class="btn">Edit members!</button><hr>
     </form>
     <form action="/teams/{{foundTeam.teamId}}/delete" method="post">
         <button type="submit" class="btn">Delete Team</button>
