@@ -62,15 +62,11 @@ public class App {
             memberDao.add(newMember);
             List<Member> allMembers = teamDao.getAllTeamMembers(teamId);
             Team newTeam = teamDao.findById(teamId);
-//            Team currentTeam = Team.findById(Team.getAllTeams().size());
-//            ArrayList<Member> allMembers = currentTeam.getMembers();
-//            allMembers.add(newMember);
-//            Team.findById(Team.getAllTeams().size()).setMembers(allMembers);
             model.put("allMembers", allMembers);
             model.put("newTeam", newTeam);
             return new ModelAndView(model, "members.hbs");
         }, new HandlebarsTemplateEngine());
-//
+
         get("/teams/display/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             List<Team> teams = teamDao.getAll();
@@ -87,14 +83,12 @@ public class App {
             model.put("team", team);
             return new ModelAndView(model, "team-detail.hbs");
         }, new HandlebarsTemplateEngine());
-//
+
         get("/teams/:teamId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
             Team foundTeam = teamDao.findById(idOfTeamToFind);
             model.put("foundTeam", foundTeam);
-//            List<Member> allMembers = teamDao.getAllTeamMembers(foundTeam.getTeamId());
-//            model.put("allMembers", allMembers);
             return new ModelAndView(model, "edit.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -110,7 +104,7 @@ public class App {
             model.put("allMembers", allMembers);
             return new ModelAndView(model, "edit-members.hbs");
         }, new HandlebarsTemplateEngine());
-//
+
         post("/teams/:teamId/members/:memberId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfTeamToFind = Integer.parseInt(request.params("teamId"));

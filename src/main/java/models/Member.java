@@ -1,7 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
 public class Member {
     private String firstName;
     private String lastName;
@@ -10,7 +8,6 @@ public class Member {
     private String skills;
     private int memberId;
     private int teamId;
-//    private static ArrayList<Member> memberInstances = new ArrayList<Member>();
     public Member(int teamId, String firstName, String lastName, String email, String favoriteColor, String skills) {
         this.teamId = teamId;
         this.firstName = firstName;
@@ -18,8 +15,6 @@ public class Member {
         this.email = email;
         this.favoriteColor = favoriteColor;
         this.skills = skills;
-//        memberInstances.add(this);
-//        this.memberId = memberInstances.size();
 
     }
 
@@ -59,14 +54,6 @@ public class Member {
         return this.memberId;
     }
 
-//    public static Member findByMemberId(int memberId){
-//        return memberInstances.get(memberId-1);
-//    }
-//
-//    public static ArrayList<Member> getAllMembers() {
-//        return memberInstances;
-//    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -95,12 +82,6 @@ public class Member {
         result = 31 * result + teamId;
         return result;
     }
-
-//
-//    public static void clearAllMembers() {
-
-    //         memberInstances.clear();
-//    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;

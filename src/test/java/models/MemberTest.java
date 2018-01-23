@@ -27,7 +27,7 @@ public class MemberTest {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
         assertEquals("the Enchanter", testMember.getLastName());
     }
-//
+
     @Test
     public void getEmail_getsEmail_String() throws Exception {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
@@ -38,7 +38,7 @@ public class MemberTest {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
         assertEquals("blue", testMember.getFavoriteColor());
     }
-//
+
     @Test
     public void getSkills_getsSkills_String() throws Exception {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
@@ -58,21 +58,21 @@ public class MemberTest {
         testMember.setLastName("John");
         assertEquals("John", testMember.getLastName());
     }
-//
+
     @Test
     public void setEmail_setsEmail_String() throws Exception {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
         testMember.setEmail("com@com.com");
         assertEquals("com@com.com", testMember.getEmail());
     }
-//
+
     @Test
     public void setFavoriteColor_setsFavoriteColor_String() throws Exception {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "ava");
         testMember.setFavoriteColor("Ultraviolet");
         assertEquals("Ultraviolet", testMember.getFavoriteColor());
     }
-//
+
     @Test
     public void setSkills_setsSkills_String() throws Exception {
         Member testMember = new Member(1,"Tim", "the Enchanter", "thing@thing.com", "blue", "Java");
