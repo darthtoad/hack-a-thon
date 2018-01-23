@@ -101,22 +101,22 @@ public class App {
             return new ModelAndView(model, "edit-members.hbs");
         }, new HandlebarsTemplateEngine());
 //
-        post("/teams/:teamId/members/edit", (request, response) -> {
+        post("/teams/:teamId/members/:memberId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            int idOfMemberToFind = Integer.parseInt(request.params("memberId"));
             Team foundTeam = teamDao.findById(idOfTeamToFind);
-            List<Member> allMembers = teamDao.getAllTeamMembers(idOfTeamToFind);
+            Member foundMember = memberDao.findById(idOfMemberToFind);
             String firstName = request.queryParams("first-name");
             String lastName = request.queryParams("last-name");
             String email = request.queryParams("email");
             String favoriteColor = request.queryParams("favorite-color").toLowerCase();
             String skills = request.queryParams("skills");
-            for (Member member : allMembers) {
-                memberDao.editMember(member.getMemberId(), member.getTeamId(), firstName, lastName, email, favoriteColor, skills);
-            }
-            List<Team> teams = teamDao.getAll();
-            model.put("teams", teams);
-            return new ModelAndView(model, "display.hbs");
+            memberDao.editMember(foundMember.getMemberId(), foundTeam.getTeamId(), firstName, lastName, email, favoriteColor, skills);
+            List<Member> allMembers = teamDao.getAllTeamMembers(idOfTeamToFind);
+            model.put("foundTeam", foundTeam);
+            model.put("allMembers", allMembers);
+            return new ModelAndView(model, "edit-members.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/teams/delete/", (request, response) -> {

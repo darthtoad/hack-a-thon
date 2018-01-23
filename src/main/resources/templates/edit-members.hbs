@@ -2,8 +2,8 @@
     <a href="/teams/{{foundTeam.teamId}}/members/new"><h1>Add New Member</h1></a>
     <hr>
     <h1>Edit Members</h1>
-        <form action='/teams/{{foundTeam.teamId}}/members/edit' method="post">
         {{#each allMembers}}
+        <form action='/teams/{{foundTeam.teamId}}/members/{{memberId}}/edit' method="post">
             <div class="form-group">
                 <label for="first-name">First name</label>
                 <input id="first-name" name="first-name" class="form-control" type="text" value="{{firstName}}">
@@ -24,9 +24,12 @@
                 <label for="skills">Skills</label>
                 <input id="skills" name="skills" class="form-control" type="text" value="{{skills}}">
             </div>
+            <button type="submit">Edit Member</button>
             <hr>
-        {{/each}}
         </form>
+        {{/each}}
+
+        <hr>
         {{#each allMembers}}
             Name: {{firstName}} {{lastName}}
             <form action="/teams/{{foundTeam.teamId}}/members/{{memberId}}/delete" method="post">
