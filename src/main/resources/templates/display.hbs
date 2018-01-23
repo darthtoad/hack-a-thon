@@ -6,18 +6,8 @@
         {{#each teams}}
             <h5>{{name}}:</h5>
             <p>{{description}}</p>
-            {{#each members}}
-                <p>First Name: {{firstName}}</p>
-                <p>Last Name: {{lastName}}</p>
-                <p>Email: {{email}}</p>
-                <p>Favorite color: {{favoriteColor}}</p>
-                {{#if skills}}
-                    {{#each skills}}
-                        <p>{{skill}}</p>
-                    {{/each}}
-                {{/if}}
-            {{/each}}
-            <a href="/teams/{{teamId}}">Edit team details</a><hr>
+            <a href="/teams/{{teamId}}/display">Display team details</a><br>
+            <a href="/teams/{{teamId}}/edit">Edit team details</a><hr>
         {{/each}}
     {{else}}
     <p>No teams available</p>

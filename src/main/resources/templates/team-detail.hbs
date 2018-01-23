@@ -1,0 +1,20 @@
+{{#partial "content"}}
+
+<div class="container">
+    <h1>{{team.name}}</h1>
+    <h3>{{team.description}}</h3>
+    <hr>
+    {{#each members}}
+    <div style="background-color: {{favoriteColor}}">
+        Name: {{firstName}} {{lastName}}<br>
+        Email: {{email}}<br>
+        Skills: {{skills}}
+    </div>
+    <hr>
+    {{/each}}
+
+    <a href="/teams/display/"><h1>Go back to all teams</h1></a>
+</div>
+{{/partial}}
+
+{{> layout.hbs}}

@@ -77,8 +77,18 @@ public class App {
             model.put("teams", teams);
             return new ModelAndView(model, "display.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/teams/:teamId/display", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
+            Team team = teamDao.findById(idOfTeamToFind);
+            List<Member> members = teamDao.getAllTeamMembers(idOfTeamToFind);
+            model.put("members", members);
+            model.put("team", team);
+            return new ModelAndView(model, "team-detail.hbs");
+        }, new HandlebarsTemplateEngine());
 //
-        get("/teams/:teamId", (request, response) -> {
+        get("/teams/:teamId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfTeamToFind = Integer.parseInt(request.params("teamId"));
             Team foundTeam = teamDao.findById(idOfTeamToFind);
